@@ -4,7 +4,7 @@
 
 iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<font color="Green">Xcode</font>を使用します。<br>
 また、使用するプログラミング言語は<font color="Green">Swift</font>とObjective-Cのいずれかを選択できますが、現在はSwiftが主流となっています。<br>
-(2020年12月時点でXcodeはVersion 12.2、SwiftはSwift5が最新版となっています。)<br>
+(2022年1月時点でXcodeはVersion 13.2、SwiftはSwift5が最新版となっています。)<br>
 
 実際にXcodeでアプリを作ってみましょう。<br>
 
@@ -12,17 +12,17 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 
 #### 1. Xcodeを起動すると次のような画面が開きます。
 
-![xcode-1-1](./images/xcode-1-1.png)
+<img src="./images/ios-1-1.png">
 
 #### 2. "Create a new Xcode project"を選択すると、プロジェクトのテンプレートを選択する画面が表示されます。
 
-![xcode-1-2](./images/xcode-1-2.png)
+<img src="./images/ios-1-2.png">
 
 いくつかのテンプレートが用意されていますが、ここではもっとも基本的な"App"を選択します。<br>
 
 #### 3. テンプレートを選択し、"Next"を押すとプロジェクトの名前などを設定する画面が表示されます。
 
-![xcode-1-3](./images/xcode-1-3.png)
+<img src="./images/ios-1-3.png">
 
 ※ Xcode 11から、ボタンの配置などUI(User Interface)の作成に<font color="Green">Storyboard</font>と<font color="Green">Swift UI</font>のいずれかが選択可能となりました。<br>
 今回の研修ではStoryboardを使って開発を行なっていきたいと思います。<br>
@@ -32,7 +32,7 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 
 ## Xcodeの各画面の説明
 
-![xcode-1-4](./images/xcode-1-4.png)
+<img src="./images/ios-1-4.png">
 
 
 #### 1. ツールバー
@@ -53,8 +53,8 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 ツールバーの"▶︎"を押してアプリを起動してみましょう。真っ白な画面が出てきたら成功です。<br>
 ※シュミレータがインストールされていない場合は、インストールしてから起動する必要があります。<br>
 
-![xcode-1-5](./images/xcode-1-5.png)
-![xcode-1-6](./images/xcode-1-6.png)
+<img src="./images/ios-1-5.png">
+<img src="./images/ios-1-6.png">
 
 
 ### 実機での起動
@@ -81,7 +81,7 @@ iOSアプリは基本的に以下の手順を繰り返して作り込んでい�
 
 #### 1. Main.storyboardを開く
 
-![xcode-2-1](./images/xcode-2-1.png)
+<img src="./images/ios-1-7.png">
 
 Main.storyboardはアプリの画面を設定するファイルです。<br>
 ここに表示されているiPhoneの画面に対してパーツを配置していきます。<br>
@@ -90,20 +90,20 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 
 ツールバーの+ボタンを押してメニューを表示し、Labelをドラッグアンドドロップで画面に配置します。<br>
 
-![xcode-gif-2-1](./gifs/xcode-gif-2-1.gif)
+<img src="./gifs/ios-1-1.gif">
 
 #### 3. 文字を編集する
 
 デフォルトでは「Label」の文字が入っているため、ここに任意の文字を入力してみます。<br>
 
-![xcode-gif-2-2](./gifs/xcode-gif-2-2.gif)
+<img src="./gifs/ios-1-2.gif">
 
 #### 4. 実行
 
 この状態でアプリを起動してみましょう先ほど入力した文字が表示されるはずです。<br>
 ※現時点では端末によって配置した場所からずれて表示される場合があります。<br>
 
-![xcode-2-2](./images/xcode-2-2.png)
+<img src="./images/ios-1-8.png">
 
 #### 5. 色を変更する
 
@@ -111,7 +111,7 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 背景色 → 「View」を選択し、ユーティリティエリアから「Background」を変更します。<br>
 文字色 → 「Label」を選択し、ユーティリティエリアから「Color」を変更します。<br>
 
-![xcode-2-3](./images/xcode-2-3.png)
+<img src="./images/ios-1-9.png">
 
 ## ボタン
 
@@ -119,11 +119,11 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 
 ツールバーのLibraryボタンを押してメニューを表示し、Buttonをドラッグアンドドロップで画面に配置します。<br>
 
-![xcode-gif-2-3](./gifs/xcode-gif-2-3.gif)
+<img src="./gifs/ios-1-3.gif">
 
 配置が終わったら、Labelと同じ様にユーティリティエリアからTitle, Text Color, Background Colorなどを変更して見た目を整えてください<br>
 
-![xcode-2-4](./images/xcode-2-4.png)
+<img src="./images/ios-1-10.png">
 
 #### 2. ボタンを押した時の処理を実装する
 
@@ -140,8 +140,7 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 
 まず、画面に紐づくソースコードを表示してみます。<br>
 以下のように画面上部のハンバーガーメニューから「Assistant」を選択することで、ソースコードを表示することが可能です。<br>
-
-![xcode-gif-2-4](./gifs/xcode-gif-2-4.gif)
+<img src="./gifs/ios-1-4.gif">
 
 
 ※ ここで開いたソースコードはナビゲーションエリアに表示されている「ViewController.swift」です。<br>
@@ -152,15 +151,15 @@ Main.storyboard上のLabelをctrlキーを押しながらクリックし、ソ�
 メニューが表示されるので、ソースコード上でこのラベルを扱うための名前を入力すると、ソースコード上に一行追加されます。<br>
 ●がつけば紐づけ完了です。<br>
 
-![xcode-gif-2-5](./gifs/xcode-gif-2-5.gif)
+<img src="./gifs/ios-1-5.gif">
 
 #### アクションの紐づけ
 
-Main.storyboard上のButtonを選択し、ユーティリティエリアの一番左の「→」ボタンをクリックすると、そのボタンに対するアクションの一覧が表示されます。<br>
+Main.storyboard上のButtonをctrlキーを押しながらクリックすると、そのボタンに対するアクションの一覧が表示されます。<br>
 この一覧の中の「Touch Up Inside」(UIパーツの上で指を離すアクション)の○マークをクリックし、ソースコードに向かって引っ張ります。<br>
 ●がつけば紐づけ完了です。<br>
 
-![xcode-gif-2-6](./gifs/xcode-gif-2-6.gif)
+<img src="./gifs/ios-1-6.gif">
 
 #### 処理の記述
 
@@ -180,7 +179,7 @@ Main.storyboard上のButtonを選択し、ユーティリティエリアの一�
 
 ここまでできたら実際に動かして確認してみましょう。ボタンを押した時にLabelの文字が変化するはずです。<br>
 
-![xcode-2-5](./images/xcode-2-5.png)
+<img src="./images/ios-1-11.png">
 
 ## テキストボックス
 
@@ -190,13 +189,13 @@ Main.storyboard上のButtonを選択し、ユーティリティエリアの一�
 
 ツールバーのLibraryボタンを押してメニューを表示し、Text Fieldをドラッグアンドドロップで画面に配置します。<br>
 
-![xcode-2-6](./images/xcode-2-6.png)
+<img src="./images/ios-1-12.png">
 
 #### 2.テキストボックスの紐づけ
 
 ラベルの時と同様に、Main.storyboard上のText Fieldをctrlキーを押しながらクリックし、ソースコードに向かって引っ張って紐付けを行います。<br>
 
-![xcode-2-7](./images/xcode-2-7.png)
+<img src="./images/ios-1-13.png">
 
 #### 3.処理の記述
 
@@ -221,7 +220,7 @@ Main.storyboard上のButtonを選択し、ユーティリティエリアの一�
 
 まずは、演算子と第二項を入力するためのテキストボックスを二つ用意します。<br>
 
-![xcode-2-8](./images/xcode-2-8.png)
+<img src="./images/ios-1-14.png">
 
 配置し終えたらコードへの紐づけも行いましょう。<br>
 
@@ -256,10 +255,11 @@ Main.storyboard上のButtonを選択し、ユーティリティエリアの一�
 }
 ```
 
-この状態で実行すると、以下の様にエディタエリアの下(デバッグエリア)に文字が表示されます。<br>
 printを使用すると()の中に記述した値がデバッグエリアに表示されます。<br>
+この状態で実行し、3つのテキストボックスに値を入力してからPUSHボタンを押すと、以下の様にエディタエリアの下(デバッグエリア)に文字が表示されます。<br>
 
-![xcode-2-9](./images/xcode-2-9.png)
+<img src="./images/ios-1-15.png">
+<img src="./images/ios-1-16.png">
 
 ここで`Optional("a")`と表示されていますが、Optionalは値が取れるかどうか不確定なものに付与されるもので、<br>
 テキストボックスの値を取得した際、その値が確実に取得できることが保証されていないため、この様な表示になっています。<br>
