@@ -12,7 +12,7 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 
 #### 1. Xcodeを起動すると次のような画面が開きます。
 
-<img src="./images/ios-1-1.png">
+<img src="./images/ios-1-1.png" width="1000">
 
 #### 2. "Create a new Xcode project"を選択すると、プロジェクトのテンプレートを選択する画面が表示されます。
 
@@ -96,7 +96,7 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 
 デフォルトでは「Label」の文字が入っているため、ここに任意の文字を入力してみます。<br>
 
-<img src="./gifs/ios-1-2.gif">
+<img src="./gifs/ios-1-2.gif" width="1000">
 
 #### 4. 実行
 
