@@ -12,7 +12,7 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 
 #### 1. Xcodeを起動すると次のような画面が開きます。
 
-<img src="./images/ios-1-1.png" width="1000">
+<img src="./images/ios-1-1.png" width="800">
 
 #### 2. "Create a new Xcode project"を選択すると、プロジェクトのテンプレートを選択する画面が表示されます。
 
