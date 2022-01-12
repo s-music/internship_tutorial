@@ -54,7 +54,7 @@ iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の<f
 ※シュミレータがインストールされていない場合は、インストールしてから起動する必要があります。<br>
 
 <img src="./images/ios-1-5.png">
-<img src="./images/ios-1-6.png">
+<img src="./images/ios-1-6.png" width="300">
 
 
 ### 実機での起動
@@ -103,7 +103,7 @@ Main.storyboardはアプリの画面を設定するファイルです。<br>
 この状態でアプリを起動してみましょう先ほど入力した文字が表示されるはずです。<br>
 ※現時点では端末によって配置した場所からずれて表示される場合があります。<br>
 
-<img src="./images/ios-1-8.png">
+<img src="./images/ios-1-8.png" width="300">
 
 #### 5. 色を変更する
 
@@ -179,7 +179,7 @@ Main.storyboard上のButtonをctrlキーを押しながらクリックすると�
 
 ここまでできたら実際に動かして確認してみましょう。ボタンを押した時にLabelの文字が変化するはずです。<br>
 
-<img src="./images/ios-1-11.png">
+<img src="./images/ios-1-11.png" width="300">
 
 ## テキストボックス
 
