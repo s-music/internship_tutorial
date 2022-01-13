@@ -39,7 +39,7 @@ Enum Hoge {
 #### 11. Optional<Wrapped>型、ImplicitryUnwrappedOptional<Wrapped>型 → 値の存在
 
 ## swiftの制御構文
-- if文<br>
+- if文  
 条件にが真になったコードブロックの処理が実行される。
 ```swift
 if 条件 {
@@ -51,7 +51,7 @@ if 条件 {
 }
 ```
 
-- while文<br>
+- while文  
 条件がtrueの限り実行しつづける。
 ```swift
 while 条件 {
@@ -59,7 +59,7 @@ while 条件 {
 }
 ```
 
-- repeate-while文<br>
+- repeate-while文  
 必ず一回実行されるwhile文
 ```swift
 repeate {
@@ -67,7 +67,7 @@ repeate {
 } while 条件
 ```
 
-- for-in文<br>
+- for-in文  
 swift3からC言語風な構文
 ```swift
 for i = 0; i < 1; i++ {
@@ -82,7 +82,7 @@ for 変数名 in 式 (where式) {
     処理
 } 
 ```
-の形が採用されています。<br>
+の形が採用されています。  
 例)
 ```swift
 // 0 ~ 10までの値のうち偶数のみを出力する。
@@ -97,7 +97,7 @@ for _ in 0...2 {
 }
 ```
 
-- switch文<br>
+- switch文  
 条件にマッチした処理を実行します。swiftではデフォルトでC言語fallthroughしないのでbreakは不要。
 ```swift
 switch 変数名 {
@@ -125,21 +125,21 @@ func 関数名(引数: 型) (-> 戻り値) {
 ```
 
 ## swiftのアクセス修飾子
-#### 1. internal<br>
+#### 1. internal  
 同一のモジュール内からアクセス可能。デフォルトの修飾子。
-#### 2. private<br>
+#### 2. private  
 クラスなどの宣言内からのみアクセス可能。
-#### 3. fileprivate<br>
+#### 3. fileprivate  
 同一のファイル内でのみアクセス可能。
-#### 4. public<br>
+#### 4. public  
 他のモジュールからもアクセス可能。overrideは可能だが、継承ができない。
-#### 5. open<br>
+#### 5. open  
 publicのアクセス範囲に加えて、継承が可能。
 
-制約の強さ(弱 → 強)<br>
+制約の強さ(弱 → 強)  
 open → public → internal → fileprivate → private
 
-## クロージャ<br>
+## クロージャ  
 無名関数を変数に代入する
 ```swift
 let a: (引数: 型) -> (戻り値) =  { (引数: 型)　-> (戻り値) in 
@@ -167,7 +167,7 @@ add = { $0 + $1 }
 
 ## 値の存在を示す型(Optional<Wrapped>, ImplicitlyUnwrappedOptional<wrapped>)
 
-ラップしている型の値が存在しているかどうかを示し、Optional<Wrapped>は値を取り出すためにアンラップ処理を行う必要があります。<br>
+ラップしている型の値が存在しているかどうかを示し、Optional<Wrapped>は値を取り出すためにアンラップ処理を行う必要があります。  
 ImplicitlyUnwrappedOptional<wrapped>はアンラップの必要がなく、暗黙的にラップしている型に変換されますが、値がない場合は実行時エラーになります。
 
 ```swift
@@ -176,7 +176,7 @@ let b: Int! // ImplicitlyUnwrappedOptional<Int>
 ```
 
 ## Optional<Wrapped>のアンラップ
-- オプショナルバインディング<br>
+- オプショナルバインディング  
 Optional<Wrapped>のWrapped型取り出し、定数に代入します。値がなかった場合はコードブロックの中がスルーされます。
 ```swift
 let a: Int? = 0
@@ -184,14 +184,14 @@ if let b = a {
    print(b)
 }
 ```
-- オプショナルチェインニング<br>
+- オプショナルチェインニング  
 Optional<Wrapped>の後ろに?をつけてWrapped型のメソッドを呼び出します。チェインの中でnilが返った場合は結果がnilになります。
 ```swift
 let a: a String? = "Hello"
 print(a?.length)
 ```
 
-- guard文<br>
+- guard文  
 条件式が真出ないときelse節の中が実行されます。else節の中では現在のスコープから退出する処理を記述しなければなりません。
 ```swift
 guard 条件式　else {
@@ -200,7 +200,7 @@ guard 条件式　else {
 }
 ```
 
-- 強制アンラップ<br>
+- 強制アンラップ  
 Optional<Wrapped>のWrapped型取り出します。値がなかった場合は実行時エラーになります。
 
 ```swift
@@ -209,7 +209,7 @@ let b: Int? = 1
 a! + b!
 ```
 
-- ??演算子<br>
+- ??演算子  
 Optional<Wrapped>のWrapped型を強制的に取り出します。値がなかった場合は右辺の値がセットされます。
 ```swift
 let a: Int? = 0
