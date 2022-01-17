@@ -23,11 +23,11 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 #### 2. 起動パネルから「**Start a new Android Studio project**」を選択する
 
-#### <img src="images/02/01.png" width="400">
+#### <img src="images/android-1-1.png" width="400">
 
 起動パネルが表示されていない場合は、上部メニューから「File → New → New Project...」を選択する
 
-![](images/02/02.png)  
+![](images/android-1-2.png)  
 
 
 
@@ -36,7 +36,7 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 これから作成するアプリのテンプレートを指定します。
 今回は「**Empty Activity**」を選択し、Nextを押下します。
 
-#### <img src="images/02/03.png" width="400">
+#### <img src="images/android-1-3.png" width="400">
 
 
 
@@ -44,7 +44,7 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 今回は下記のように設定します。  
 
-<img src="images/02/04.png" width="400">  
+<img src="images/android-1-4.png" width="400">  
 
 ※Minimum API level・・・これから作るアプリが対応する最小のAPIレベルを指定します。
 　　　　　　　　　　　　設定する最小APIレベルにより、非対応なメソッドやプロパティが存在するので要注意。
@@ -59,26 +59,26 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 まず、以下の赤枠に注目してください。
 
-![](images/03/01.png)
+![](images/android-1-5.png)
 
 ここに「**No devices**」と表示されている場合は今起動できるエミュレータが存在しないことを示しており、エミュレータを作成して追加する必要があります。
 「**No devices**」をクリックし、プルダウン内の「**AVD Manager**」をクリックします。
 
-![](images/03/02.png)
+![](images/android-1-6.png)
 
 Android Virtual Device Managerが開かれるので、「**＋ Create Virtual Device...**」をクリックしてエミュレータを作成しましょう。
 
-#### <img src="images/03/03.png" width="400">
+#### <img src="images/android-1-7.png" width="400">
 
 次の画面では作成するエミュレータのデバイスの種類を指定します。
 今回は「**Phone**」の「**Nexus 5X**」を選択して、Nextを押下します。
 
-#### <img src="images/03/04.png" width="400">
+#### <img src="images/android-1-8.png" width="400">
 
 次に、エミュレータのバージョンを指定します。
 今回は「**Pie**」を選択して、Nextを押下します。
 
-#### <img src="images/03/05.png" width="400">
+#### <img src="images/android-1-9.png" width="400">
 
 ここでPieの横に「Download」と表示されている場合はそのエミュレータをダウンロードする必要があるため、Downloadを押下します。
 ダウンロードが完了したらNextを押下します。
@@ -87,11 +87,11 @@ Android Virtual Device Managerが開かれるので、「**＋ Create Virtual De
 
 確認できたら先ほどの「No devices」がエミュレータ名に変わっているはずなので、隣の**▶︎(Run)ボタン**を押下することでそのエミュレーターが別ウィンドウで起動し、自動的にアプリが立ち上がります。 
 
-![](images/03/06.png)
+![](images/android-1-10.png)
 
 以下のように表示されたでしょうか？  
 
-#### <img src="images/03/07.png" height="500">
+#### <img src="images/android-1-11.png" height="500">
 
 ## Activityの初期表示
 
@@ -108,11 +108,11 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 MainActivityが開かれていない場合は、左のファイル一覧から選択して開いてください。
 
-#### <img src="images/05/01.png" width="300">
+#### <img src="images/android-1-12.png" width="300">
 
 Activityにはライフサイクルがあり、以下のように生成から破棄までの一連の流れに応じたコールバックメソッドが呼ばれます。  
 
-#### <img src="images/05/activity_lifecycle.png" width="400">  
+#### <img src="images/android-1-13.png" width="400">  
 
 onCreate内で setContentView メソッドを呼ぶことで、レイアウトリソースをActivityにセットしています。画面表示時に配置するUIパーツはこのようにしてAcitivityで読み込みます。
 
@@ -126,7 +126,7 @@ onCreate内で setContentView メソッドを呼ぶことで、レイアウト�
 
 左のファイル一覧からactivuty_main.xmlを開いてください。下のようなLayout Editorが表示されます。
 
-#### <img src="images/05/02.png" width="500">
+#### <img src="images/android-1-14.png" width="500">
 
 - **Palette**
   ここからレイアウトに追加する要素を選択します。
@@ -148,7 +148,7 @@ onCreate内で setContentView メソッドを呼ぶことで、レイアウト�
   テキストラベルやボタン、入力フィールドなど、各UI部品を指します。
   Widgetは後述のLayout内にしか配置できません。 
 
-  #### <img src="images/05/03.png" width="300">  
+  #### <img src="images/android-1-15.png" width="300">  
 
 - **Layout**
   WidgetやLayoutを配置するための枠を指します。
@@ -162,19 +162,19 @@ Layoutの種類はいくつかあり、レイアウト方法により使い分�
 
 * FrameLayout   
 
-    #### <img src="images/05/04.png" height="300">
+    #### <img src="images/android-1-16.png" height="300">
 
 最もシンプルなレイアウトで、要素を左上に配置します。複数要素を子要素とした場合、重なって表示されます。
 
 * LinearLayout   
 
-    #### <img src="images/05/05.png" height="300"><img src="images/05/06.png" height="300">
+    #### <img src="images/android-1-17.png" height="300"><img src="images/android-1-18.png" height="300">
 
 基本と言ってもいいレイアウトで、中に入れた要素を並列に配置します（FrameLayoutとは違い要素は重なりません）。縦横どちらかに並べることができます。
 
 * TableLayout / GridLayout   
 
-    #### <img src="images/05/07.png" height="300"><img src="images/05/08.png" height="300">
+    #### <img src="images/android-1-19.png" height="300"><img src="images/android-1-20.png" height="300">
 
 要素を格子状に並べることができます。TableLayoutは列を、GridLayoutは列・行をまたいで配置することができます。電卓のようなUIを作りたい時便利です。  
 
@@ -195,7 +195,7 @@ ConstraintLayoutは制約を用いて要素を配置していくLayoutでした�
 デフォルトで配置されているTextViewをクリックして選択した状態で、右側の**Attributes**を見てみてください。
 以下のような情報が見られると思いますが、これが今まさにこのTextViewに付けられている制約の情報です。
 
-#### <img src="images/05/09.png" width="300">
+#### <img src="images/android-1-21.png" width="300">
 
 - １・・・**Margin**（制約の距離（単位はdp））
 - ２・・・**Bias**（位置の移動（単位は%））
@@ -213,29 +213,29 @@ ConstraintLayoutは制約を用いて要素を配置していくLayoutでした�
 実際に１〜４の値を弄ってみると直感的に理解しやすいと思います。
 試しにTextViewを以下のような配置に変更してみましょう。
 
-#### <img src="images/05/10.png" height="300">
+#### <img src="images/android-1-22.png" height="300">
 
 制約は以下のようになります。Bottomの制約を削除するのがポイントです。
 
-#### <img src="images/05/11.png" width="300">
+#### <img src="images/android-1-23.png" width="300">
 
 
 
 次にボタンを配置してみましょう。
 左上のPaletteからその下のComponent Treeまで**Button**をドラッグ&ドロップし、TextViewの下に配置します。
 
-#### <img src="images/05/12.png" width="250">
+#### <img src="images/android-1-24.png" width="250">
 
 配置されたばかりのButtonにはまだ制約が付いておらず、Component Treeに赤いエラーマークが出てしまっているので、Buttonに新しく制約を付与しましょう。
 以下のような配置を目指します。
 
-#### <img src="images/05/13.png" width="300">
+#### <img src="images/android-1-25.png" width="200">
 
 まずはTextViewとの間が32dpという制約をつけてみます。
 Buttonを選択状態にすると中央のDesign Editor上のButtonの上下左右に丸いCreate Constraintマークが表示されるので、ButtonのTopのマークをドラッグしてTextViewのBottomのマークに繋げてみましょう。
 Buttonが移動して、0dpとして制約が付与されます。
 
-#### <img src="images/05/14.png" height="300"><img src="images/05/15.png" height="300">
+#### <img src="images/android-1-26.png" height="300"><img src="images/android-1-27.png" height="300">
 
 あとは先ほどと同様に右のAttributesから数値を32に変更します。
 
@@ -244,7 +244,7 @@ Buttonの左右それぞれのConstraintを、TextViewの同じく左右それ�
 そうすると、自然とTextViewの中心に合うようになります。
 以下の画像のようになったでしょうか？
 
-#### <img src="images/05/16.png" width="200">
+#### <img src="images/android-1-28.png" width="200">
 
 この様に、Constraint Layoutでは要素と要素の間に様々な制約を付与することによって、柔軟なレイアウトが可能となっています。
 
@@ -257,7 +257,7 @@ Buttonの左右それぞれのConstraintを、TextViewの同じく左右それ�
 まず、先程配置したTextViewとButtonのID属性に以下を付与します。  
 ID属性もAttributesから編集が可能です。
 
-#### <img src="images/06/03.png" width="300">   
+#### <img src="images/android-1-29.png" width="300">   
 
 * TextView -> `sample_text_view`
 * Button -> `sample_button`
@@ -272,7 +272,7 @@ ID属性もAttributesから編集が可能です。
 
 ※記述した際に以下のようなエラーが出る場合、macのoptionキーを押しながらEnterキーを押すことで必要なソースがインポートされ、エラーは無くなります。
 
-#### <img src="images/06/01.png" width="300">
+#### <img src="images/android-1-30.png" width="300">
 
 次に、LogCat（Android Studio下部で表示するコンソール部分）でtextViewのtextを出力してみましょう。  
 LogCatに出力するには`println()`と記述し、括弧内には出力したい文字列を入力します。
@@ -308,7 +308,7 @@ Buttonを選択した状態でCommon Attributesの**onClick**を編集します�
 また、こういった何らかのイベントに応じて呼ばれるメソッドを**Listener**と言います。  
 今回はonClickSampleButtonと入力します。
 
-#### <img src="images/06/02.png" width="200">   
+#### <img src="images/android-1-31.png" width="200">   
 
 ここでButtonに赤色のエラーが現れますが、これは指定のメソッドが見つからないというエラーなので、今度はそのメソッドを作成します。  
 MainActivity.ktを開いて、`onCreate(savedInstanceState: Bundle?)`メソッドの下に、以下のように記述してください。  
