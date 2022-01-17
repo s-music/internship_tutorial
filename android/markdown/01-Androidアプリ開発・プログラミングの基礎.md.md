@@ -93,29 +93,6 @@ Android Virtual Device Managerが開かれるので、「**＋ Create Virtual De
 
 #### <img src="images/03/07.png" height="500">
 
-# ActivityとFragment
-
-## アプリの基本要素
-
-### Activity
-Androidアプリを構成する基本要素の一つがActivityです。  
-ActivityはMVCで言うところのコントローラークラスに相当する役割を果たします。  
-アプリが起動するとまず起動イベントを受け取るように設定されたActivityが立ち上がります。  
-みなさんがAndroidアプリで目にする画面の大元には必ずActivityがあり、制御しています。  
-Activityだけでも画面を表示させることはできますが、基本的にはFragmentというコンポーネントを用いてActivity上で画面を表示させます。  
-
-### Fragment
-Fragmentは多くの場合複数のUIを伴ったレイアウトを持ち、実際のUI表示はActivity上でFragmentを利用することにより実現します。  
-Activityを一つの画面と捉えた時、その中に１つまたは複数のFragmentを表示することが可能です。  
-FragmentのライフサイクルはそのホストのActivityのライフサイクルの影響を受けます。  
-Activityが破棄されれば、Fragmentも破棄されます。  
-
-### Resource
-各種静的ファイルを扱います。  
-多言語に対応した文字列リソースやレイアウト定義などは主にResourceで管理します。
-
-# ActivityでのUI表示
-
 ## Activityの初期表示
 
 ここではまずプロジェクト作成時に同時に生成されたMainActivityを用いて、画面表示の基本的な所をおさえていきます。
@@ -271,65 +248,6 @@ Buttonの左右それぞれのConstraintを、TextViewの同じく左右それ�
 
 この様に、Constraint Layoutでは要素と要素の間に様々な制約を付与することによって、柔軟なレイアウトが可能となっています。
 
-## GuidelineとBarrier
-
-Constraint Layoutで以下のようなレイアウトを組んだ時を考えてみます。
-（『Name』と『Date』は、左端が揃うようにそれぞれ『生年月日』の右側に対して同じ8dpという制約をつけています）
-
-#### <img src="images/05/17.png" width="300"><img src="images/05/18.png" width="300">
-
-『名前』と『生年月日』の左側に同じ制約が付けられています。
-この制約の付け方の場合、片方の数値を変更したらもう片方の制約も編集しなくてはならず、柔軟性に欠けてしまいます。
-
-そういった共通の基準がある場合は、その基準を**Guideline**に持たせましょう。
-以下のプルダウンからVertical（縦）またはHorizontal（横）のGuidelineを追加することができます。
-
-#### <img src="images/05/19.png" width="300">
-
-Vertical Guidelineを追加して、左端からの距離を先ほどの共通している制約と同じ24dpに設定し、『名前』と『生年月日』の左側の制約をGuidelineに対して0dpで付け直すことで、見た目は変わらずに同じ制約を統一化することができました。
-（Guidelineの値は以下の場所から変更できます。その下のConstraint Widgetではないので注意！）
-
-#### <img src="images/05/20.png" width="300">
-
-#### <img src="images/05/21.png" width="300">
-
-同じように『Name』と『Date』の右側にもGuidelineを設けた方が良いでしょう。
-丸で囲まれた『◀︎』マークをクリックすると『▶︎』『%』とマークが変化し、向きの変更やパーセントでの指定を選択できるので、状況に応じて使い分けましょう。
-
-#### <img src="images/05/22.png" width="300">
-
-
-
-次に、『名前』の文字列を変更した時のことを考えてみましょう。
-『名前（カナ）』に変更してみると、右側の『Name』に被ってしまいました。
-
-#### <img src="images/05/23.png" width="300">
-
-これは『Name』の左側の制約が『生年月日』の右側に対して付いてしまっているからです。
-しかし、だからと言って『名前（カナ）』の右側に合わせてしまうと、また別の修正が行われた時に同じような不都合が起きる可能性があり、一時的な解決にしかなりません。
-
-このような場合には**Barrier**を用いて、左側にある要素の表示幅を常に確保するようにしましょう。
-BarrierはGuidelineと同じプルダウンから追加でき、また縦と横の2種類があるのも同じです。
-今回は縦向きのBarrierを使います。
-
-#### <img src="images/05/24.png" width="300">
-
-Barrierを追加したら、次に表示幅を確保したい要素をComponent Tree上でBarrierにドラッグ&ドロップします。
-
-#### <img src="images/05/25.png" width="200"><img src="images/05/26.png" width="200">
-
-今追加した二つのtextView『名前（カナ）』と『生年月日』はそれより右側の要素と被らないようにしたいので、barrierのAttributesから**barrierDirection**をrightに設定します。
-
-#### <img src="images/05/27.png" width="300">
-
-そうするとBarrier内の要素群の一番右端にBarrierが配置されるので、『Name』と『Date』の左端がBarrierの右端にくっつくように制約を付け直すと文字の被りが起こらなくなります。
-
-#### <img src="images/05/29.png" width="250"><img src="images/05/30.png" width="250">
-
-なお、既に存在する制約の対象先だけを変更したい場合は、Attributesの**layout_constraint~**の項目で編集が可能です。
-（下の画像は『Name』と『Date』のStart（左側）の制約の対象を、textView2のEnd（右側）からbarrierに変更しているところです）
-
-#### <img src="images/05/28.png" width="300">
 
 # UIとプログラムの紐付け
 
