@@ -288,18 +288,6 @@ textView.text = "任意の文字列"
 こうすることで、`textView.text`の文字列を任意の文字列で上書きすることができます。  
 次の行でもう一度`println()`と書き、文字列が上書きされていることを確かめてみましょう。
 
---------
-しかしこの`val textView = findViewById<TextView>(R.id.sample_text_view)`という記法、かつてJavaで記述していたときからの名残なのですが（実際にはもっと煩雑でした）、Kotlinには便利な拡張機能があり、もっとラクに記述することができます。  
-onCreate内で直接 sample_text_view と入力すると入力候補が現れるので、そのままEnterを押します。
-するとimportファイルとして
-
-```kotlin
-import kotlinx.android.synthetic.main.activity_main.*
-```
-
-という記述が自動的に追加されると思います。  
-これはKotlin Android Extensionsと呼ばれるもので、id名から直接UIを（キャスト不要で）参照することができます。  
-
 -------------
 
 **さて、今度はsetContentView(R.layout.activity_main)の手前でtextViewのtextをprintlnしてみましょう。**  
@@ -345,13 +333,3 @@ Buttonが押されるたびに、TextViewに現在時刻が表示されるよう
 現在時刻は`Date().toString()`で文字列として取得することができます。  
 ※Dateのimport候補が2種類出てきた場合は、`java.util.Date`を選択してください。
     
-----
-#### Kotlinでの省略記法
-上記の方法は下記のようにクロージャを用いることで、xmlを編集せずにMainActivityのみで記述を完結させることができます。   
-以降の研修ではこちらの方法で進めていきます。
-
-```kotlin
-    sample_button.setOnClickListener { v ->  
-        // TODO
-    }
-```
