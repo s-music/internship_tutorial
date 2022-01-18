@@ -1,5 +1,11 @@
 # iOSアプリ開発・プログラミングの基礎
 
+## 今回の目的
+
+以下のような、簡単なiOSアプリを作成する。  
+
+<img src="./gifs/ios-1-1.gif" width="300">  
+
 ## iOSアプリ開発
 
 iOSアプリの開発ではMacで利用可能なIDE(統合開発環境)[^1]の**Xcode**を使用します。  
@@ -90,13 +96,13 @@ Main.storyboardはアプリの画面を設定するファイルです。
 
 ツールバーの+ボタンを押してメニューを表示し、Labelをドラッグアンドドロップで画面に配置します。  
 
-<img src="./gifs/ios-1-1.gif">
+<img src="./gifs/ios-1-2.gif">
 
 #### 3. 文字を編集する
 
 デフォルトでは「Label」の文字が入っているため、ここに任意の文字を入力してみます。  
 
-<img src="./gifs/ios-1-2.gif" width="1000">
+<img src="./gifs/ios-1-3.gif" width="1000">
 
 #### 4. 実行
 
@@ -119,7 +125,7 @@ Main.storyboardはアプリの画面を設定するファイルです。
 
 ツールバーのLibraryボタンを押してメニューを表示し、Buttonをドラッグアンドドロップで画面に配置します。  
 
-<img src="./gifs/ios-1-3.gif">
+<img src="./gifs/ios-1-4.gif">
 
 配置が終わったら、Labelと同じ様にユーティリティエリアからTitle, Text Color, Background Colorなどを変更して見た目を整えてください  
 
@@ -140,7 +146,7 @@ Main.storyboardはアプリの画面を設定するファイルです。
 
 まず、画面に紐づくソースコードを表示してみます。  
 以下のように画面上部のハンバーガーメニューから「Assistant」を選択することで、ソースコードを表示することが可能です。  
-<img src="./gifs/ios-1-4.gif">
+<img src="./gifs/ios-1-5.gif">
 
 
 ※ ここで開いたソースコードはナビゲーションエリアに表示されている「ViewController.swift」です。  
@@ -151,7 +157,7 @@ Main.storyboard上のLabelをctrlキーを押しながらクリックし、ソ�
 メニューが表示されるので、ソースコード上でこのラベルを扱うための名前を入力すると、ソースコード上に一行追加されます。  
 ●がつけば紐づけ完了です。  
 
-<img src="./gifs/ios-1-5.gif">
+<img src="./gifs/ios-1-6.gif">
 
 #### アクションの紐づけ
 
@@ -159,7 +165,7 @@ Main.storyboard上のButtonをctrlキーを押しながらクリックすると�
 この一覧の中の「Touch Up Inside」(UIパーツの上で指を離すアクション)の○マークをクリックし、ソースコードに向かって引っ張ります。  
 ●がつけば紐づけ完了です。  
 
-<img src="./gifs/ios-1-6.gif">
+<img src="./gifs/ios-1-7.gif">
 
 #### 処理の記述
 
