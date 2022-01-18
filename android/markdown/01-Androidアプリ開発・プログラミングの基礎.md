@@ -44,9 +44,10 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 <img src="images/android-1-4.png" width="400">  
 
-※Minimum API level・・・これから作るアプリが対応する最小のAPIレベルを指定します。  
-　　　　　　　　　　　　設定する最小APIレベルにより、非対応なメソッドやプロパティが存在するので要注意。
-　　　　　　　　　　　　（プロジェクト作成後でも変更できます）  
+※Minimum API level・・・  
+これから作るアプリが対応する最小のAPIレベルを指定します。  
+設定する最小APIレベルにより、非対応なメソッドやプロパティが存在するので要注意。
+（プロジェクト作成後でも変更できます）  
 
 設定ができたらFinishを押下し、プロジェクトを作成します。  
 
@@ -160,19 +161,19 @@ Layoutの種類はいくつかあり、レイアウト方法により使い分�
 
 * FrameLayout   
 
-    <img src="images/android-1-16.png" height="300">
+  <img src="images/android-1-16.png" height="300">
 
 最もシンプルなレイアウトで、要素を左上に配置します。複数要素を子要素とした場合、重なって表示されます。  
 
 * LinearLayout   
 
-    <img src="images/android-1-17.png" height="300"><img src="images/android-1-18.png" height="300">
+  <img src="images/android-1-17.png" height="300"><img src="images/android-1-18.png" height="300">
 
 基本と言ってもいいレイアウトで、中に入れた要素を並列に配置します（FrameLayoutとは違い要素は重なりません）。縦横どちらかに並べることができます。  
 
 * TableLayout / GridLayout   
 
-    <img src="images/android-1-19.png" height="300"><img src="images/android-1-20.png" height="300">
+  <img src="images/android-1-19.png" height="300"><img src="images/android-1-20.png" height="300">
 
 要素を格子状に並べることができます。TableLayoutは列を、GridLayoutは列・行をまたいで配置することができます。電卓のようなUIを作りたい時便利です。  
 
