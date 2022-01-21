@@ -1,7 +1,9 @@
 # はじめに
 
 ## 今回の目的
-以下の開発ツール・言語を用いてAndroidアプリを作成してみる。  
+以下の開発ツール・言語を用いて簡単なAndroidアプリを作成してみる。  
+
+<img src="gifs/android-1-1.gif" height="500">
 
 ### 開発ツール
 * Android Studio 4.1.1  
@@ -94,7 +96,11 @@ Android Virtual Device Managerが開かれるので、「**＋ Create Virtual De
 
 ## Activityの初期表示
 
+Android開発におけるActivityとは画面を制御を担う部分で、みなさんがAndroidアプリで目にする画面の大元には必ずActivityがあります。  
 ここではまずプロジェクト作成時に同時に生成されたMainActivityを用いて、画面表示の基本的な所をおさえていきます。  
+MainActivityが開かれていない場合は、左のファイル一覧から選択して開いてください。 
+
+<img src="images/android-1-12.png" width="300">
 
 まず、MainActivityのclass内にはあらかじめ以下のメソッドが記述されているはずです。  
 
@@ -105,19 +111,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-MainActivityが開かれていない場合は、左のファイル一覧から選択して開いてください。  
-
-<img src="images/android-1-12.png" width="300">
-
-Activityにはライフサイクルがあり、以下のように生成から破棄までの一連の流れに応じたコールバックメソッドが呼ばれます。  
-
-<img src="images/android-1-13.png" width="400">  
-
-onCreate内で setContentView メソッドを呼ぶことで、レイアウトリソースをActivityにセットしています。画面表示時に配置するUIパーツはこのようにしてAcitivityで読み込みます。  
+このonCreateはActivityが初めて生成された時に呼ばれます。この中で setContentView メソッドを呼ぶことで、画面のレイアウトリソースをActivityにセットしています。画面表示時に配置するUIパーツはこのようにしてActivityで読み込みます。  
 
 今度はそのレイアウトリソースを見てみましょう。  
-
-
 
 ## レイアウトリソースの形式 
 画面のレイアウトを決めるリソースファイルは基本的にxmlファイルで作成します。  
@@ -245,8 +241,15 @@ Buttonの左右それぞれのConstraintを、TextViewの同じく左右それ�
 
 <img src="images/android-1-28.png" width="200">
 
-この様に、Constraint Layoutでは要素と要素の間に様々な制約を付与することによって、柔軟なレイアウトが可能となっています。  
+この様に、Constraint Layoutでは要素と要素の間に様々な制約を付与することによって、柔軟なレイアウトが可能となっています。 
 
+同じ方法でテキストボックスを配置してみましょう。左上のPaletteからその下のComponent TreeまでPlain Textをドラッグ&ドロップし、TextViewの下に配置します。
+<img src="images/android-1-32.png" width="200">
+
+今度は以下の画像のような制約でTextViewの上部に配置してみましょう。  
+<img src="images/android-1-33.png" height="300">
+
+初期値として「Name」という値が入っていますが不要なので削除します。初期値の変更はAttributesのtextから行えます。  
 
 # UIとプログラムの紐付け
 
@@ -260,6 +263,7 @@ ID属性もAttributesから編集が可能です。
 
 * TextView -> `sample_text_view`
 * Button -> `sample_button`
+* EditText -> `sample_edit_text`
 
 これらの要素をプログラム上から参照するために、その要素を含むレイアウトリソースを読み込んだクラス（今回はMainActivity）のonCreateメソッド内で、setContentView(R.layout.activity_main)の後に  
 
@@ -285,49 +289,52 @@ textView.text = "任意の文字列"
 ```
 と記述します。  
 こうすることで、`textView.text`の文字列を任意の文字列で上書きすることができます。  
-次の行でもう一度`println()`と書き、文字列が上書きされていることを確かめてみましょう。  
+次の行でもう一度`println()`と書き、文字列が上書きされていることを確かめてみましょう。
+エミュレータ上でも確認することができます。
+
 
 -------------
-
-**さて、今度はsetContentView(R.layout.activity_main)の手前でtextViewのtextをprintlnしてみましょう。**  
-
-無事、アプリがクラッシュしたことと思います。これはつまり、setContentView(R.layout.activity_main)によってレイアウトをセットしているので、それよりも前に参照しようとすると参照すべき要素が見つからずNull Pointer Exceptionとなってしまいます。  
-
-
 
 ## ListenerおよびHandlerの実装
 
 さて、TextViewを参照・編集できることはわかりました。  
-今度はButtonが押されたときに、textViewに現在時刻が表示されるようにしましょう。  
+今度はButtonが押されたときに、textViewに入力値が表示されるようにしましょう。  
 activity_main.xmlを開いてください。  
 
 Buttonを選択した状態でCommon Attributesの**onClick**を編集します。  
 この属性にメソッド名を記述すると、Buttonがクリックされた際にそのメソッドが実行されるようになります。  
-また、こういった何らかのイベントに応じて呼ばれるメソッドを**Listener**と言います。  
 今回はonClickSampleButtonと入力します。  
 
 <img src="images/android-1-31.png" width="200">   
 
 ここでButtonに赤色のエラーが現れますが、これは指定のメソッドが見つからないというエラーなので、今度はそのメソッドを作成します。  
-MainActivity.ktを開いて、`onCreate(savedInstanceState: Bundle?)`メソッドの下に、以下のように記述してください。  
-`println()`の中の文字列はなんでも構いませんが、文字列として扱うためにダブルクォーテーションで括る必要があります。  
+MainActivity.ktを開いて、`onCreate(savedInstanceState: Bundle?)`メソッドの下に、以下のように記述してください。    
 
 ```kotlin
     fun onClickSampleButton(view: View) {
-        println("出力")
+        val textView = findViewById<TextView>(R.id.sample_text_view)
+        textView.text = "Goodbye"
     }
 ```
-
-ここまで記述できたら一度Runして、動作を確認してみましょう。  
-LogCatに`println()`内の文字列が出力されていれば成功です。  
+  
+ここまで記述できたら一度Runして、動作を確認してみましょう。ボタンを押した時にtextViewの文字が変化するはずです。
 
 また、**Listener**の実際の処理内容を**Handler**と言います。  
 **Listener**がイベントの通知を受け取り、その際の処理を**Handler**が受け持ちます。  
-今回の場合は、**onClickSampleButton**というListenerのHandlerが**println("出力")**ということになります。  
+今回の場合は、**onClickSampleButton**というListenerのHandlerがこの関数ということになります。 
+
+先ほどボタンを押した時の処理を記述した部分を、テキストボックスの値を設定するように修正します。
+
+```kotlin
+    fun onClickSampleButton(view: View) {
+        val textView = findViewById<TextView>(R.id.sample_text_view)
+        val editText = findViewById<EditText>(R.id.sample_edit_text)
+        textView.text = editText.text
+    }
+```
+
+修正できたらRunして、動作を確認してみましょう。  
+
+[次へ](./02-計算機アプリの作成.md) 
 
 
-## 課題  
-Buttonが押されるたびに、TextViewに現在時刻が表示されるようにしましょう。  
-現在時刻は`Date().toString()`で文字列として取得することができます。  
-※Dateのimport候補が2種類出てきた場合は、`java.util.Date`を選択してください。  
-    
