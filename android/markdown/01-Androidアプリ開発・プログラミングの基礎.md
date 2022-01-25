@@ -192,18 +192,18 @@ ConstraintLayoutは制約を用いて要素を配置していくLayoutでした�
 
 <img src="images/android-1-21.png" width="300">
 
-- １・・・**Margin**（制約の距離（単位はdp））
-- ２・・・**Bias**（位置の移動（単位は%））
-- ３・・・要素の縦/横の長さの決定方法の変更（クリックする度に以下の順で切り替わります）
-  　　　　**Wrap Content**（文字列等の要素内の情報に対して適切な長さになります）
-  　　　　**Fixed**（現在表示されている長さに固定します）
-  　　　　**Match Constraint**（他の制約に従って長さを決定します）
-- ４・・・**Delete Constraint**（制約の削除）
-- ５・・・上記の上下左右の制約がどのLayout/Widgetに対して付けられているか
-  　　　　※Start = 左端、End = 右端、Top = 上端、Bottom = 下端
-  　　　　  例えば『Start → StartOf **parent** (0dp)』は、
-  　　　　  『（TextViewの）Startがparent（親Layout）のStartから0dp離れた位置に付く』
-  　　　　  という意味になります。
+- １・・・**Margin**（制約の距離（単位はdp））  
+- ２・・・**Bias**（位置の移動（単位は%））  
+- ３・・・要素の縦/横の長さの決定方法の変更（クリックする度に以下の順で切り替わります）  
+  　　　　**Wrap Content**（文字列等の要素内の情報に対して適切な長さになります）  
+  　　　　**Fixed**（現在表示されている長さに固定します）  
+  　　　　**Match Constraint**（他の制約に従って長さを決定します）  
+- ４・・・**Delete Constraint**（制約の削除）  
+- ５・・・上記の上下左右の制約がどのLayout/Widgetに対して付けられているか  
+  　　　　※Start = 左端、End = 右端、Top = 上端、Bottom = 下端  
+  　　　　  例えば『Start → StartOf **parent** (0dp)』は、  
+  　　　　  『（TextViewの）Startがparent（親Layout）のStartから0dp離れた位置に付く』  
+  　　　　  という意味になります。  
 
 実際に１〜４の値を弄ってみると直感的に理解しやすいと思います。  
 試しにTextViewを以下のような配置に変更してみましょう。  
