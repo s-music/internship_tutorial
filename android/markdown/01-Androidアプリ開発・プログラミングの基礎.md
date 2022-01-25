@@ -295,7 +295,7 @@ textView.text = "任意の文字列"
 
 -------------
 
-## ListenerおよびHandlerの実装
+## Listenerの実装
 
 さて、TextViewを参照・編集できることはわかりました。  
 今度はButtonが押されたときに、textViewに入力値が表示されるようにしましょう。  
@@ -318,10 +318,9 @@ MainActivity.ktを開いて、`onCreate(savedInstanceState: Bundle?)`メソッ�
 ```
   
 ここまで記述できたら一度Runして、動作を確認してみましょう。ボタンを押した時にtextViewの文字が変化するはずです。
-
-また、**Listener**の実際の処理内容を**Handler**と言います。  
-**Listener**がイベントの通知を受け取り、その際の処理を**Handler**が受け持ちます。  
-今回の場合は、**onClickSampleButton**というListenerのHandlerがこの関数ということになります。 
+  
+プログラミングにおいて、特定の**イベント**が発生した時に実行するよう定められた処理のことを**Listener**と呼びます。
+今回の場合は、**onClickSampleButton**が**onClickイベント**の**Listener**と言うことになります。 
 
 先ほどボタンを押した時の処理を記述した部分を、テキストボックスの値を設定するように修正します。
 
