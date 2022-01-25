@@ -121,7 +121,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 左のファイル一覧からactivuty_main.xmlを開いてください。下のようなLayout Editorが表示されます。  
 
-<img src="images/android-1-14.png" width="500">
+<img src="images/android-1-14.png" width="1000">
 
 - **Palette**
   ここからレイアウトに追加する要素を選択します。  
