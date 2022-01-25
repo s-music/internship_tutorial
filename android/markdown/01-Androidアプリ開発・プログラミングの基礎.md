@@ -94,32 +94,13 @@ Android Virtual Device Managerが開かれるので、「**＋ Create Virtual De
 
 <img src="images/android-1-11.png" height="500">
 
-## Activityの初期表示
-
-Android開発におけるActivityとは画面を制御を担う部分で、みなさんがAndroidアプリで目にする画面の大元には必ずActivityがあります。  
-ここではまずプロジェクト作成時に同時に生成されたMainActivityを用いて、画面表示の基本的な所をおさえていきます。  
-MainActivityが開かれていない場合は、左のファイル一覧から選択して開いてください。 
-
-<img src="images/android-1-12.png" width="300">
-
-まず、MainActivityのclass内にはあらかじめ以下のメソッドが記述されているはずです。  
-
-```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
-}
-```
-
-このonCreateはActivityが初めて生成された時に呼ばれます。この中で setContentView メソッドを呼ぶことで、画面のレイアウトリソースをActivityにセットしています。画面表示時に配置するUIパーツはこのようにしてActivityで読み込みます。  
-
-今度はそのレイアウトリソースを見てみましょう。  
+# UIの作成
 
 ## レイアウトリソースの形式 
 画面のレイアウトを決めるリソースファイルは基本的にxmlファイルで作成します。  
 実際にxmlファイルに記述することでレイアウトを作成することもできますが、今回はより直感的にレイアウトを編集でき、視覚的にもわかりやすいLayout Editorで作成していきます。  
 
-左のファイル一覧からactivuty_main.xmlを開いてください。下のようなLayout Editorが表示されます。  
+左のファイル一覧からactivity_main.xmlを開いてください。下のようなLayout Editorが表示されます。  
 
 <img src="images/android-1-14.png" width="1000">
 
@@ -246,12 +227,39 @@ Buttonの左右それぞれのConstraintを、TextViewの同じく左右それ�
 同じ方法でテキストボックスを配置してみましょう。左上のPaletteからその下のComponent TreeまでPlain Textをドラッグ&ドロップし、TextViewの下に配置します。
 <img src="images/android-1-32.png" width="200">
 
-今度は以下の画像のような制約でTextViewの上部に配置してみましょう。  
+今度は以下の画像のような制約でTextViewの上部に配置してみましょう。 
+ 
 <img src="images/android-1-33.png" height="300">
 
 初期値として「Name」という値が入っていますが不要なので削除します。初期値の変更はAttributesのtextから行えます。  
 
 # UIとプログラムの紐付け
+
+## Activity
+
+UIが操作された際に何らかの処理を行わせたい場合は、ソースコードを記述する必要がありますが、  
+Android開発では、画面制御を担っている**Activityクラス**に、UIに関する処理を書くことができます。  
+
+プロジェクトを作成すると、MainActivityファイルが自動で生成されるので、左のファイル一覧から選択して中身を開いてみましょう。  
+
+<img src="images/android-1-12.png" width="300"> 
+
+以下のような記述がデフォルトで記述されているかと思います。  
+
+```kt
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
+```
+
+記述は構造化されており、`class MainActivity : AppCompatActivity()`はActivityの宣言、  
+`override fun onCreate(savedInstanceState: Bundle?)`は画面が生成される際に呼ばれる処理なのですが、  
+`setContentView(R.layout.activity_main)`の部分で、先程まで編集していたレイアウトリソースをセットしています。  
+
+配置したボタンが押された時の処理を作るため、MainActivityの中に記述を追加していきましょう。  
 
 ## レイアウトリソースの参照
 
