@@ -285,21 +285,16 @@ ID属性もAttributesから編集が可能です。
 
 <img src="images/android-1-30.png" width="300">
 
-次に、LogCat（Android Studio下部で表示するコンソール部分）でtextViewのtextを出力してみましょう。  
-LogCatに出力するには`println()`と記述し、括弧内には出力したい文字列を入力します。  
+この`val 変数名 = 値`は**変数定義**と呼ばれます。変数は、処理の中で後で使いたい値に名前をつけて保持しておく為に使用されます。  
+ここでは先ほど作成したUIの*TextView*に対して処理を行うために、変数に代入しています。  
+変数定義を行った次の行で、以下のように記述してください。  
 
-また、textViewのテキストは`textView.text`で取得できます。  
-
-`textView.text`内の文字列が出力できたら、次に`textView.text`の文字列を編集してみましょう。  
-先ほど書いた`println()`の次の行に、  
 ```kotlin
 textView.text = "任意の文字列"
 ```
-と記述します。  
+  
 こうすることで、`textView.text`の文字列を任意の文字列で上書きすることができます。  
-次の行でもう一度`println()`と書き、文字列が上書きされていることを確かめてみましょう。
-エミュレータ上でも確認することができます。
-
+エミュレータ上で確認してみましょう。
 
 -------------
 
@@ -330,7 +325,8 @@ MainActivity.ktを開いて、`onCreate(savedInstanceState: Bundle?)`メソッ�
 プログラミングにおいて、特定の**イベント**が発生した時に実行するよう定められた処理のことを**Listener**と呼びます。
 今回の場合は、**onClickSampleButton**が**onClickイベント**の**Listener**と言うことになります。 
 
-先ほどボタンを押した時の処理を記述した部分を、テキストボックスの値を設定するように修正します。
+今度は、EditTextに入力した値をTextViewに表示してみましょう。
+先ほどボタンを押した時の処理を記述した部分を、EditTextの値を設定するように修正します。EditTextの値は`EditText.text`で取得できます。
 
 ```kotlin
     fun onClickSampleButton(view: View) {
