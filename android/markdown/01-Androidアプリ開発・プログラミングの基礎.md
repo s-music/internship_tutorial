@@ -6,13 +6,13 @@
 <img src="gifs/android-1-1.gif" height="500">
 
 ### 開発ツール
-* Android Studio 4.1.1  
+* **Android Studio arctic fox | 2020.3.1 patch 4**
 Andoird端末で動作するアプリケーションを開発するために用意された公式の統合開発環境（IDE）。  
-IntelliJ IDEAがベースになっている。Android Studio 3.0より公式にKotlinが同梱。  
-最新バージョンは4.1.1。 
+IntelliJ IDEAがベースになっている。
+最新バージョンは2022年1月に安定版がリリースされた「Android Studio Bumblebee | 2021.1.1」。 
 
 ### 使用言語
-* Kotlin  
+* **Kotlin**
 2011年7月20日に発表された静的型付けのオブジェクト指向プログラミング言語。  
 Java言語をもっと簡潔・安全になるように改良した産業利用向け汎用言語として開発された。  
 オペレーティング・システムによらずJava仮想マシン(JVM)上で動く。  
