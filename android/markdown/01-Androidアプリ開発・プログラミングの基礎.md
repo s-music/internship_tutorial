@@ -7,7 +7,7 @@
 
 ### 開発ツール
 * **Android Studio arctic fox | 2020.3.1 patch 4**
-Andoird端末で動作するアプリケーションを開発するために用意された公式の統合開発環境（IDE）。  
+Android端末で動作するアプリケーションを開発するために用意された公式の統合開発環境（IDE）。  
 IntelliJ IDEAがベースになっている。
 最新バージョンは2022年1月に安定版がリリースされた「Android Studio Bumblebee | 2021.1.1」。 
 
