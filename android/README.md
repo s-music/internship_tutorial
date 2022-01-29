@@ -1,4 +1,4 @@
-インターンシップ - iOSプログラミング
+インターンシップ - Androidプログラミング
 ====
 
 Overview
@@ -14,5 +14,5 @@ Overview
 ## Sections
 
 <!-- TODO: URLを記述 -->
-- [01-iOSアプリ開発・プログラミングの基礎](./markdown/01-Androidアプリ開発・プログラミングの基礎.md)  
+- [01-Androidアプリ開発・プログラミングの基礎](./markdown/01-Androidアプリ開発・プログラミングの基礎.md)  
 - [02-計算機アプリの作成](./markdown/02-計算機アプリの作成.md)  
