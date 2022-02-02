@@ -21,7 +21,7 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 #### 1. Android Studioをインストールしてアプリケーションを起動する
 
-#### 2. 起動パネルから「**Start a new Android Studio project**」を選択する
+#### 2. 起動パネルから「**New Project**」を選択する
 
 <img src="images/android-1-1.png" width="400">
 
@@ -195,6 +195,7 @@ ConstraintLayoutは制約を用いて要素を配置していくLayoutでした�
 
 <img src="images/android-1-23.png" width="300">
 
+※ 変更が反映されない場合は、**Attributes**の**layout_marginTop**を240dpに変更してください。  
 
 
 次にボタンを配置してみましょう。  
@@ -214,6 +215,7 @@ Buttonが移動して、0dpとして制約が付与されます。
 <img src="images/android-1-26.png" height="300"><img src="images/android-1-27.png" height="300">
 
 あとは先ほどと同様に右のAttributesから数値を32に変更します。  
+※ 変更が反映されない場合は、**Attributes**の**layout_marginBottom**を32dpに変更してください。  
 
 次に、TextViewと中心を合わせます。  
 Buttonの左右それぞれのConstraintを、TextViewの同じく左右それぞれに繋げてみましょう（距離は0dpのままで大丈夫です）。  
