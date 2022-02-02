@@ -21,7 +21,7 @@ Java言語をもっと簡潔・安全になるように改良した産業利用�
 
 #### 1. Android Studioをインストールしてアプリケーションを起動する
 
-#### 2. 起動パネルから「**Start a new Android Studio project**」を選択する
+#### 2. 起動パネルから「**New Project**」を選択する
 
 <img src="images/android-1-1.png" width="400">
 
